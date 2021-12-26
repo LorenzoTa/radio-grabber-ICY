@@ -153,7 +153,7 @@ sub write_stream{
             }            
             my $file_name;
             ($file_name = $track_name) =~ s/\s+/_/g;
-			exit "filename undefined!" unless $file_name;
+			die "filename undefined!" unless $file_name;
             $file_name =~ s/\/\\:\*\?\"'<>\|//g;
 # currently playing:      **advertisement**
 # Use of uninitialized value $file_name in substitution (s///) at icy.pl line 148, <STDIN> line 1.
@@ -163,6 +163,14 @@ sub write_stream{
             $file_name = File::Spec->devnull() unless $track_name;
             # set previous filename, but still how_many = 0
             $previous_file{name} = $file_name;
+			# already exists?
+			my $incr = 0;
+			if ( -e $file_name ){
+				warn "[$file_name] already exists!";
+				$incr++;
+				$file_name =~ s/(\.[^.]+)$/$incr\1/ 
+				
+			}
             # the new file
             open $out, '>', $file_name or die "unable to write to $file_name!"; # currently playing:      Various Artists - Henry Gray / How Can You Do It? [2wCQ]
 																				# unable to write to Various_Artists_-_Henry_Gray_/_How_Can_You_Do_It?_[2wCQ].mp3! at icy.pl line 154, <STDIN> line 1.
