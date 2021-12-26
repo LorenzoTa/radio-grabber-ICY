@@ -168,7 +168,7 @@ sub write_stream{
 			if ( -e $file_name ){
 				warn "[$file_name] already exists!";
 				$incr++;
-				$file_name =~ s/(\.[^.]+)$/$incr\1/ 
+				$file_name =~ s/(\.[^.]+)$/$incr$1/ 
 				
 			}
             # the new file
