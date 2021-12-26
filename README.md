@@ -62,6 +62,9 @@ The problem is that the title will arrive when the song already started, so I de
 
 Let's say Icy-MetaData is 5 (generally is 16k), you have a situation like ( '=' it's a chunk):
 
+
+<pre>
+
   -unknown song(1)------  -------------- The Clash - Loose This Skin ------- ...
                        |  |
                        |  |
@@ -75,6 +78,9 @@ Let's say Icy-MetaData is 5 (generally is 16k), you have a situation like ( '=' 
 
   (1) about unknown song: probably you never get an unknown song: I suspect that ICY protocol
   will send icy metadata as first part of a brand new response.
+
+</pre>
+
 
 REFERENCES
 
