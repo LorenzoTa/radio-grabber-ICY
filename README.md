@@ -84,7 +84,7 @@ Let's say Icy-MetaData is 5 (generally is 16k), you have a situation like ( '=' 
 
 REFERENCES
 
-See the original post by qbxk at perlmonks
+See the original post by qbxk at [a](b) perlmonks
 
 a post about ICY protocol
 
