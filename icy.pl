@@ -159,10 +159,6 @@ sub write_stream{
 # Use of uninitialized value $file_name in substitution (s///) at icy.pl line 148, <STDIN> line 1.
 # Use of uninitialized value $file_name in substitution (s///) at icy.pl line 149, <STDIN> line 1.
             $file_name.='.mp3' unless $file_name =~ /\.[^.]+$/;
-            # if StreamTitle is empty probably is an advertisement
-            $file_name = File::Spec->devnull() unless $track_name;
-            # set previous filename, but still how_many = 0
-            $previous_file{name} = $file_name;
 			# already exists?
 			my $incr = 0;
 			if ( -e $file_name ){
@@ -171,6 +167,11 @@ sub write_stream{
 				$file_name =~ s/(\.[^.]+)$/$incr$1/ 
 				
 			}
+            # if StreamTitle is empty probably is an advertisement
+            $file_name = File::Spec->devnull() unless $track_name;
+            # set previous filename, but still how_many = 0
+            $previous_file{name} = $file_name;
+			
             # the new file
             open $out, '>', $file_name or die "unable to write to $file_name!"; # currently playing:      Various Artists - Henry Gray / How Can You Do It? [2wCQ]
 																				# unable to write to Various_Artists_-_Henry_Gray_/_How_Can_You_Do_It?_[2wCQ].mp3! at icy.pl line 154, <STDIN> line 1.
