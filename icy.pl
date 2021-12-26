@@ -158,7 +158,7 @@ sub write_stream{
 # currently playing:      **advertisement**
 # Use of uninitialized value $file_name in substitution (s///) at icy.pl line 148, <STDIN> line 1.
 # Use of uninitialized value $file_name in substitution (s///) at icy.pl line 149, <STDIN> line 1.
-            # $file_name.='.mp3';
+            $file_name.='.mp3' unless $file_name =~ /\.[^.]+$/;
             # if StreamTitle is empty probably is an advertisement
             $file_name = File::Spec->devnull() unless $track_name;
             # set previous filename, but still how_many = 0
