@@ -112,6 +112,13 @@ sub read_meta{
     my ( $metalen, $metabyte);      
     $socket->read($metabyte, 1);
     $metalen = unpack("C",$metabyte) * 16;
+	unless ($metabyte){
+		$debug = 1;
+		warn "Nothing received by the socket! Turning debug on and..";
+		sleep 1;
+		warn "Retrying..";
+		read_meta( $socket );
+	}
 	# if no networks
 	# Use of uninitialized value in multiplication (*) at icy.pl line 114, <STDIN> line 1.
     if( $metalen > 0) {
@@ -146,8 +153,12 @@ sub write_stream{
             }            
             my $file_name;
             ($file_name = $track_name) =~ s/\s+/_/g;
-            $file_name =~ s/\/\\:\*\?\"<>\|//g;
-            $file_name.='.mp3';
+			exit "filename undefined!" unless $file_name;
+            $file_name =~ s/\/\\:\*\?\"'<>\|//g;
+# currently playing:      **advertisement**
+# Use of uninitialized value $file_name in substitution (s///) at icy.pl line 148, <STDIN> line 1.
+# Use of uninitialized value $file_name in substitution (s///) at icy.pl line 149, <STDIN> line 1.
+            # $file_name.='.mp3';
             # if StreamTitle is empty probably is an advertisement
             $file_name = File::Spec->devnull() unless $track_name;
             # set previous filename, but still how_many = 0
