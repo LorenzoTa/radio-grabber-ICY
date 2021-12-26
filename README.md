@@ -84,17 +84,19 @@ Let's say Icy-MetaData is 5 (generally is 16k), you have a situation like ( '=' 
 
 REFERENCES
 
-See the original post by qbxk at [a](b) perlmonks
+See the original post by qbxk at [perlmonks](perlmonks|https://www.perlmonks.org/index.pl?node_id=534645) 
 
-a post about ICY protocol
+[a post about ICY protocol](https://stackoverflow.com/questions/4911062/pulling-track-info-from-an-audio-stream-using-php/4914538#4914538)
 
-The ICY protocol explained
+[The ICY protocol explained](http://www.smackfu.com/stuff/programming/shoutcast.html)
 
-A very datailed tutorial
+[A very datailed tutorial](https://thecodeartist.blogspot.com/2013/02/shoutcast-internet-radio-protocol.html)
 
-a not complete but useful description of ICY
+[a not complete but useful description of ICY](https://www.radiotoolbox.com/community/forums/viewtopic.php?t=74)
 
-a technical article about streaming networks
+[a technical article about streaming networks](https://people.kth.se/~johanmon/dse/casty.pdf)
+
+
 AUTHOR
 
 This program is by Discipulus as found in perlmonks.org with the fundamental inspiration of the above mentioned qbxk
