@@ -3,12 +3,12 @@ demonstrative usage of Perl to grab a MP3 stream using the ICY protocol
 
 NAME
 
-mp3streamcutter.pl
+icy.pl
 
 This program open an mp3 stream and save songs to distinct files. It's intended to understand the ICY protocol and not intended to save copirighted data.
 SYNOPSIS
 
-    mp3streamcutter.pl -url URL [-agent STRING -extraparts N -debug 0-2]
+    icy.pl -url URL [-agent STRING -extraparts N -debug 0-2]
     
 
     --url URL
